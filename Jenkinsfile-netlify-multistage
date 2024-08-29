@@ -95,7 +95,7 @@ pipeline {
         }
         stage('Approval') {
             steps {
-                input message: 'Approval required for production deployment ', ok: 'Approval'
+                input message: 'Do you want to deploy the same to prod', ok: 'Approve', submitter: '"manager"'
             }
         }
 
