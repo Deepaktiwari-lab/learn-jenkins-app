@@ -93,6 +93,11 @@ pipeline {
                 '''
             }
         }
+        stage('Approval') {
+            steps {
+                input message: 'Approval required for production deployment ', ok: 'Approval'
+            }
+        }
 
         stage('Deploy prod') {
             agent {
